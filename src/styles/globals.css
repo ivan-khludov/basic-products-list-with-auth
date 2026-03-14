@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading:
+    "Cairo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-body:
+    "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-label:
+    "Cairo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-label-2:
+    "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-description:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-regular:
+    "Roboto Mono", ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace;
+  --font-roboto:
+    "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  /* Backgrounds */
+  --bg-page: #f9f9f9;
+  --bg-gradient-soft: linear-gradient(180deg, #f8f8f8 0%, #ffffff 50%);
+  --bg-gradient-stroke: linear-gradient(180deg, #edededb3 0%, #ededed00 100%);
+  --bg-gradient-elevated:
+    linear-gradient(0deg, #ffffff00 50%, #2323230f 100%), #ffffffff;
+
+  /* Text colors */
+  --text-primary: #222222; /* Text/Black */
+  --text-secondary: #404040; /* #404040 */
+  --text-muted: #999999; /* Text/Grey */
+  --text-inverse: #ffffff; /* Color/White, White */
+
+  /* Brand colors */
+  --brand-primary: #242edb; /* #242EDB */
+  --brand-primary-soft: #797fea; /* #797FEA */
+  --brand-accent: #367aff; /* #367AFF */
+
+  /* Status colors */
+  --success-soft: #ebf3ea; /* Soft Green #EBF3EA */
+  --danger: #f11010; /* #F11010 */
+
+  /* Neutral / gray scale */
+  --neutral-950: #000000; /* #000000 */
+  --neutral-900: #161919; /* Black #161919 */
+  --neutral-800: #202020; /* Black #202020 */
+  --neutral-700: #232323; /* #232323 */
+  --neutral-600: #333333; /* Color/Black #333333 */
+  --neutral-500: #3c538e; /* #3C538E */
+  --neutral-400: #515161; /* Dark Blue #515161 */
+  --neutral-300: #6c6c6c; /* #6C6C6C */
+  --neutral-200: #9c9c9c; /* #9C9C9C */
+  --neutral-150: #969b9f; /* White Theme/Gray #969B9F */
+  --neutral-140: #b2b3b9; /* Gray 3 #B2B3B9 */
+  --neutral-130: #c4c4c4; /* #C4C4C4 */
+  --neutral-120: #c9c9c9; /* #C9C9C9 */
+  --neutral-110: #cacaca; /* #CACACA */
+  --neutral-90: #e0e0e0; /* #E0E0E0 */
+  --neutral-80: #e2e2e2; /* #E2E2E2 */
+  --neutral-70: #ebebeb; /* #EBEBEB */
+  --neutral-60: #ededed; /* #EDEDED */
+  --neutral-50: #ececeb; /* Gray 2 #ECECEB */
+  --neutral-40: #f3f3f3; /* #F3F3F3 */
+  --neutral-30: #f6f6f6; /* #F6F6F6 */
+  --neutral-20: #f9f9f9; /* #F9F9F9 */
+
+  /* Shadows */
+  --shadow-1: 0px 24px 32px 0px #0000000a;
+  --shadow-2: 0px 20px 50px 0px #0000001f;
+  --shadow-inner-top: inset 0px -2px 0px 0px #ffffff;
+  --shadow-inner-top-dark: inset 0px -2px 0px 0px #232323;
+  --shadow-logo: 0px 0px 0px 2px #ffffffff, 0px 12px 8px 0px #00000008;
+
+  /* etc. */
+  --btn-login-box-shadow: 0 8px 8px 0 #367aff08, inset 0 -2px 0 1px #00000014;
+  --btn-login-background:
+    linear-gradient(0deg, #ffffff00 0%, #ffffff1f 100%), #242edb;
+  --auth-or-line: #ededed;
+}
+
+:root {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-page);
+}
+
+body {
+  @apply m-0 min-h-screen min-w-[320px];
+  background-color: var(--bg-page);
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+@keyframes loading-bar-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+@layer base {
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+@layer utilities {
+  .text-heading-3 {
+    @apply text-[24px] font-bold;
+    font-family: var(--font-heading);
+  }
+
+  .text-heading-4 {
+    @apply text-[20px] leading-[20px] font-bold;
+    font-family: var(--font-heading);
+  }
+
+  .text-heading-6 {
+    @apply text-[16px] font-bold;
+    font-family: var(--font-heading);
+  }
+
+  .text-body {
+    @apply text-[16px] font-normal;
+    font-family: var(--font-body);
+  }
+
+  .text-body-bold {
+    @apply text-[16px] font-bold;
+    font-family: var(--font-body);
+  }
+
+  .text-label {
+    @apply text-[14px] font-medium;
+    font-family: var(--font-label);
+  }
+
+  .text-label-2 {
+    @apply text-[14px] font-semibold;
+    font-family: var(--font-label-2);
+  }
+
+  .text-label-3 {
+    @apply text-[14px] font-normal;
+    font-family: var(--font-label);
+  }
+
+  .text-title {
+    @apply text-[12px] leading-[16px] font-semibold;
+    font-family: var(--font-heading);
+  }
+
+  .text-description {
+    @apply text-[12px] leading-[16px] font-normal;
+    font-family: var(--font-description);
+  }
+
+  .text-placeholder {
+    @apply text-[14px] leading-[24px] font-normal;
+    font-family: var(--font-description);
+  }
+
+  .text-regular {
+    @apply text-[16px] font-normal;
+    font-family: var(--font-regular);
+  }
+
+  .text-note {
+    @apply text-[18px] leading-[21px];
+    font-family: var(--font-roboto);
+  }
+
+  .text-heading-auth {
+    @apply text-[40px];
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.015em;
+    font-family: var(--font-description);
+    color: var(--neutral-700);
+    text-shadow:
+      0px -1px 0px var(--neutral-700),
+      0px 0px 0px var(--neutral-600);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-subtitle-auth {
+    @apply text-[18px] font-medium;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-family: var(--font-description);
+    background: linear-gradient(
+      180deg,
+      var(--neutral-140) 0%,
+      var(--neutral-90) 75%,
+      var(--neutral-40) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-auth-or {
+    font-family: var(--font-description);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0;
+    background: linear-gradient(
+      180deg,
+      var(--neutral-140) 0%,
+      var(--neutral-90) 75%,
+      var(--neutral-40) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-no-account {
+    font-family: var(--font-description);
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0;
+    color: var(--neutral-300);
+  }
+
+  .animate-loading-bar {
+    animation: loading-bar-slide 1.5s ease-in-out infinite;
+  }
+}
